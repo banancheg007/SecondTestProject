@@ -19,8 +19,7 @@ namespace FirstTestProject.main
             InternetExplorerOptions options = new InternetExplorerOptions();
             if (driver == null)
             {
-                options.EnableNativeEvents = false;
-                driver = new InternetExplorerDriver(options);
+                driver = new FirefoxDriver();
             }
 
             return driver;
