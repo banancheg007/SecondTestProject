@@ -24,6 +24,11 @@ namespace FirstTestProject.page
             return driver.FindElement(locator);
         }
 
+        protected IReadOnlyCollection<IWebElement> GetWebElements(By locator)
+        {
+            return driver.FindElements(locator);
+        }
+
         public void WaitForDisplayed(By locator)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

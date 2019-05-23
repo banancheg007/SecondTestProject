@@ -1,5 +1,6 @@
 ﻿using FirstTestProject.main;
 using MyTests.pages;
+using MyTests.utils;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,8 @@ namespace MyTests.tests
 
         {
             mainPage.OpenStartUrl();
-            mainPage.ChangeCity();
+            mainPage.ChangeCity(Constants.London);
+            mainPage.GetContentMoreTab();
         }
     }
 }

@@ -14,23 +14,32 @@ namespace MyTests.pages
     {
         public By CountryLabel = By.ClassName("geolink__reg");
         public By CountryField = By.Id("city__front-input");
-        public By LondonDropBox = By.Id("");
+        public By GreatBritainDropBox = By.XPath("//*[text()='Великобритания']");
+        public By MoreTabItems = By.ClassName("home-tabs__more-item");
+        public By MoreTab = By.XPath("//div[@class='home-arrow__tabs']//descendant::a[9]");
 
         public void OpenStartUrl()
         {
             Navigate(Constants.SITE_URL);
         }
 
-        public void ChangeCity()
+        public void ChangeCity(string city)
         {
             WaitForEnabled(CountryLabel);
             GetWebElement(CountryLabel).Click();
             WaitForEnabled(CountryField);
             GetWebElement(CountryField).Clear();
-            Thread.Sleep(5000);
-            GetWebElement(CountryField).SendKeys(Constants.London);
-            GetWebElement(CountryField).SendKeys(Keys.Enter);
-            Thread.Sleep(5000);
+            GetWebElement(CountryField).SendKeys(city);
+            WaitForEnabled(GreatBritainDropBox);
+            GetWebElement(GreatBritainDropBox).Click();
+        }
+
+        public IReadOnlyCollection<IWebElement> GetContentMoreTab()
+        {
+            WaitForDisplayed(MoreTab);
+            Thread.Sleep(20000);
+            GetWebElement(MoreTab).Click();
+            return GetWebElements(MoreTabItems);
         }
     }
 }
