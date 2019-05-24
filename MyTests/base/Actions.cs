@@ -24,7 +24,7 @@ namespace FirstTestProject.page
             return driver.FindElement(locator);
         }
 
-        protected IReadOnlyCollection<IWebElement> GetWebElements(By locator)
+        protected IList<IWebElement> GetWebElements(By locator)
         {
             return driver.FindElements(locator);
         }

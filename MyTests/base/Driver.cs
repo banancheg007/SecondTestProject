@@ -16,7 +16,7 @@ namespace FirstTestProject.main
 
         public static IWebDriver Instance()
         {
-            InternetExplorerOptions options = new InternetExplorerOptions();
+           
             if (driver == null)
             {
                 driver = new FirefoxDriver();
