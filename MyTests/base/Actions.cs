@@ -31,13 +31,13 @@ namespace FirstTestProject.page
 
         public void WaitForDisplayed(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             wait.Until((driver) => GetWebElement(locator).Displayed == true);
         }
 
         public void WaitForEnabled(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             wait.Until(driver => GetWebElement(locator).Enabled == true);
         }
     }

@@ -63,6 +63,7 @@
     <Compile Include="base\Actions.cs" />
     <Compile Include="base\Driver.cs" />
     <Compile Include="base\Program.cs" />
+    <Compile Include="pages\LoginPage.cs" />
     <Compile Include="pages\MainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\SmokeTests.cs" />

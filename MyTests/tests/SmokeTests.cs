@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyTests.tests
@@ -15,15 +16,17 @@ namespace MyTests.tests
     class SmokeTests
     {
         private MainPage mainPage;
+        private LoginPage loginPage;
 
         [SetUp]
         public void BeforeTest()
         {
             mainPage = new MainPage();
+            loginPage = new LoginPage();
         }
 
-        [TearDown]
-        public void AfterTest()
+        [OneTimeTearDown]
+        public void Cleanup()
         {
             Driver.Destroy();
         }
@@ -38,5 +41,15 @@ namespace MyTests.tests
             mainPage.ChangeCity(Constants.Paris);
             Assert.AreEqual(contentMoreTabFirstCity, mainPage.GetContentMoreTab());
         }
+
+        [Test]
+        public void LoginTest()
+
+        {
+            mainPage.OpenStartUrl();
+            loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
+            Assert.AreEqual(Constants.AutotestUserLogin, loginPage.GetLoggedUserName());
+        }
+
     }
 }
