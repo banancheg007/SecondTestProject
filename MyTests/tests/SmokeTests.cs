@@ -2,6 +2,7 @@
 using MyTests.pages;
 using MyTests.utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,9 @@ namespace MyTests.tests
         {
             mainPage.OpenStartUrl();
             mainPage.ChangeCity(Constants.London);
-            mainPage.GetContentMoreTab();
+            var contentMoreTabFirstCity = mainPage.GetContentMoreTab();
+            mainPage.ChangeCity(Constants.Paris);
+            Assert.AreEqual(contentMoreTabFirstCity, mainPage.GetContentMoreTab());
         }
     }
 }

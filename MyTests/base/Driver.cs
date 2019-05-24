@@ -16,10 +16,20 @@ namespace FirstTestProject.main
 
         public static IWebDriver Instance()
         {
-            InternetExplorerOptions options = new InternetExplorerOptions();
+           
             if (driver == null)
             {
-                driver = new FirefoxDriver();
+                ChromeOptions options = new ChromeOptions();
+                var proxy = new Proxy
+                {
+                    Kind = ProxyKind.Manual,
+                    IsAutoDetect = false,
+
+                    SslProxy = "91.208.39.70:8080"
+                };
+                options.Proxy = proxy;
+                options.AddArgument("ignore-certificate-errors");
+                driver = new ChromeDriver(options);
             }
 
             return driver;

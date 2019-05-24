@@ -14,7 +14,6 @@ namespace MyTests.pages
     {
         public By CountryLabel = By.ClassName("geolink__reg");
         public By CountryField = By.Id("city__front-input");
-        public By GreatBritainDropBox = By.XPath("//*[text()='Великобритания']");
         public By MoreTabItems = By.ClassName("home-tabs__more-item");
         public By MoreTab = By.XPath("//div[@class='home-arrow__tabs']//descendant::a[9]");
 
@@ -30,16 +29,23 @@ namespace MyTests.pages
             WaitForEnabled(CountryField);
             GetWebElement(CountryField).Clear();
             GetWebElement(CountryField).SendKeys(city);
-            WaitForEnabled(GreatBritainDropBox);
-            GetWebElement(GreatBritainDropBox).Click();
+            WaitForEnabled(By.XPath($"//*[text()='{city}']"));
+            GetWebElement(By.XPath($"//*[text()='{city}']")).Click();
         }
 
-        public IReadOnlyCollection<IWebElement> GetContentMoreTab()
+        public IList<string> GetContentMoreTab()
         {
             WaitForDisplayed(MoreTab);
-            Thread.Sleep(20000);
             GetWebElement(MoreTab).Click();
-            return GetWebElements(MoreTabItems);
+            var contentMoreTab =  GetWebElements(MoreTabItems);
+            IList<string> contentMoreTabStrings = new List<string>();
+            Console.WriteLine("\nCurrent List items\n");
+            foreach (IWebElement webElement in contentMoreTab)
+            {
+                contentMoreTabStrings.Add(webElement.Text);
+                Console.WriteLine(webElement.Text);
+            }
+            return contentMoreTabStrings;
         }
     }
 }
