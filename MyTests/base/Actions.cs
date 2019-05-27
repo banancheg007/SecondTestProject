@@ -12,32 +12,32 @@ namespace FirstTestProject.page
 {
     class Actions
     {
-        protected static readonly IWebDriver driver = Driver.Instance();
+         public static IWebDriver driver = Driver.CurrentDriver;
 
         protected void Navigate(String url)
         {
-            driver.Navigate().GoToUrl(url);
+            Driver.CurrentDriver.Navigate().GoToUrl(url);
         }
 
         protected IWebElement GetWebElement(By locator)
         {
-            return driver.FindElement(locator);
+            return Driver.CurrentDriver.FindElement(locator);
         }
 
         protected IList<IWebElement> GetWebElements(By locator)
         {
-            return driver.FindElements(locator);
+            return Driver.CurrentDriver.FindElements(locator);
         }
 
         public void WaitForDisplayed(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(Driver.CurrentDriver, TimeSpan.FromSeconds(20));
             wait.Until((driver) => GetWebElement(locator).Displayed == true);
         }
 
         public void WaitForEnabled(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(Driver.CurrentDriver, TimeSpan.FromSeconds(20));
             wait.Until(driver => GetWebElement(locator).Enabled == true);
         }
     }
