@@ -64,5 +64,15 @@ namespace MyTests.tests
             Assert.AreEqual(Constants.AutotestUserLogin, loginPage.GetLoggedUserName());
         }
 
+        [Test]
+        public void LogoutTest()
+
+        {
+            mainPage.OpenStartUrl();
+            loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
+            loginPage.Logout();
+            Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
+        }
+
     }
 }

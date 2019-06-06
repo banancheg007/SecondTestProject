@@ -19,7 +19,7 @@ namespace FirstTestProject.page
             Driver.CurrentDriver.Navigate().GoToUrl(url);
         }
 
-        protected IWebElement GetWebElement(By locator)
+        public IWebElement GetWebElement(By locator)
         {
             return Driver.CurrentDriver.FindElement(locator);
         }
