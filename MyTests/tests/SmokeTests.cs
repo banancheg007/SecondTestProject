@@ -1,7 +1,10 @@
-﻿using FirstTestProject.main;
+﻿using Allure.Commons;
+using FirstTestProject.main;
 using FirstTestProject.page;
 using MyTests.pages;
 using MyTests.utils;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -14,8 +17,14 @@ using System.Threading.Tasks;
 namespace MyTests.tests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureDisplayIgnored]
+ 
     class SmokeTests
     {
+
+        
+
         private MainPage mainPage;
         private LoginPage loginPage;
 

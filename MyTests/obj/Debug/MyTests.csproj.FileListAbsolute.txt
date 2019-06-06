@@ -35,3 +35,9 @@ C:\Users\User\source\repos\SecondTestProject\MyTests\obj\Debug\MyTests.csproj.Co
 C:\Users\User\source\repos\SecondTestProject\MyTests\obj\Debug\MyTests.exe
 C:\Users\User\source\repos\SecondTestProject\MyTests\obj\Debug\MyTests.pdb
 C:\Users\User\source\repos\SecondTestProject\MyTests\obj\Debug\MyTests.csprojAssemblyReference.cache
+C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csprojAssemblyReference.cache
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Allure.Commons.dll
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\MimeTypesMap.dll
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\NUnit.Allure.dll
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Newtonsoft.Json.xml
