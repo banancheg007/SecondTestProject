@@ -38,6 +38,4 @@ C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\MimeTypesMap.dll
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\NUnit.Allure.dll
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csprojAssemblyReference.cache
-C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csproj.CoreCompileInputs.cache
-C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csproj.CopyComplete
+C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csprojResolveAssemblyReference.cache

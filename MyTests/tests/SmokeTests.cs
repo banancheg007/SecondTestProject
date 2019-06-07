@@ -74,5 +74,22 @@ namespace MyTests.tests
             Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
         }
 
+        /* [Test]
+        public void InvalidPassword()
+
+        {
+            mainPage.OpenStartUrl();
+            loginPage.Login(Constants.AutotestUserLogin, Constants.InvalidAutotestUserPassword);
+            Thread.Sleep(5000);
+            Assert.That(Constants.InvalidPasswordError, Is.EqualTo(loginPage.GetWebElement(loginPage.InvalidPasswordLabel)));
+        }
+
+        [Test]
+        public void NavigationTest()
+
+        {
+            mainPage.OpenStartUrl();
+        }*/
+
     }
 }

@@ -12,6 +12,9 @@ namespace MyTests.utils
         public const string Paris = "Париж";
         public const string London = "Лондон";
         public const string AutotestUserLogin = "AutotestUser";
+        public const string InvalidAutotestUserLogin = "NoAutotestUser";
         public const string AutotestUserPassword = "AutotestUser123";
+        public const string InvalidAutotestUserPassword = "NoAutotestUser123";
+        public const string InvalidPasswordError = "Неверный пароль";
     }
 }

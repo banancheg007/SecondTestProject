@@ -16,8 +16,9 @@ namespace MyTests.pages
         public By EnterMailButton = By.XPath("//div[@class='desk-notif-card__card']//descendant::a[3]");
         public By UserNameLabel = By.XPath("//div[@class='mail-User-Name']");
         public By ExitButton = By.LinkText("Выйти из сервисов Яндекса");
+        public By InvalidPasswordLabel = By.ClassName("passp-form-field__error");
 
-       
+
 
         public void Login(string login, string password)
         {

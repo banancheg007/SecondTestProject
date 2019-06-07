@@ -16,6 +16,7 @@ namespace MyTests.pages
         public By CountryField = By.Id("city__front-input");
         public By MoreTabItems = By.ClassName("home-tabs__more-item");
         public By MoreTab = By.XPath("//div[@class='home-arrow__tabs']//descendant::a[9]");
+        public By NavigationTabItems = By.XPath("//descendant::div[@class='home-tabs stream-control dropdown2 dropdown2_switcher_elem i-bem home-tabs_js_inited']");
 
         public void OpenStartUrl()
         {
