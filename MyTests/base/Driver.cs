@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Support.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace FirstTestProject.main
             get { return Driver.GetInstance(); }
         }
 
-        public static IWebDriver GetInstance()
+        public static EventFiringWebDriver GetInstance()
         {
             
 
@@ -39,9 +40,14 @@ namespace FirstTestProject.main
                     options.AddArgument("ignore-certificate-errors");
                     driver = new ChromeDriver(options);
                 }
-
-                return driver;
+            EventFiringWebDriver eventsDriver = new EventFiringWebDriver(driver);
+            eventsDriver.ElementClicked += new EventHandler<WebElementEventArgs>(MyElementClickedHandler);
+            return eventsDriver;
             
+        }
+        static void MyElementClickedHandler(object sender, WebElementEventArgs e)
+        {
+            Console.WriteLine("KURWA");
         }
 
         static public void Destroy()
