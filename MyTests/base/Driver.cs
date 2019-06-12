@@ -17,7 +17,7 @@ namespace FirstTestProject.main
     public class Driver
     {
         public static IWebDriver driver;
-       
+      
         public static IWebDriver CurrentDriver
 
         {
@@ -42,6 +42,7 @@ namespace FirstTestProject.main
                     options.AddArgument("ignore-certificate-errors");
                     driver = new ChromeDriver(options);
                 }
+
             EventFiringWebDriver eventsDriver = new EventFiringWebDriver(driver);
             eventsDriver.ElementClicked += new EventHandler<WebElementEventArgs>(MyElementClickedHandler);
             return eventsDriver;
@@ -54,11 +55,9 @@ namespace FirstTestProject.main
 
         public static void MakeScreenShot()
         {
-            var screenshot = driver.TakeScreenshot();
-            Random rnd = new Random();
-            var filePath = @"C:\allure-2.7.0\screen" + rnd.Next(1, 99) + ".jpeg";
-            Allure.DefaultLifecycle
-            screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Jpeg);
+            AllureLifecycle.Instance.AddAttachment($"Screenshot [{DateTime.Now:HH:mm:ss}]",
+                 "image/png",
+                 driver.TakeScreenshot().AsByteArray);
         }
 
         static public void Destroy()

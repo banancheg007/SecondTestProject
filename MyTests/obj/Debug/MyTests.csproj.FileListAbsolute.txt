@@ -38,4 +38,7 @@ C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\MimeTypesMap.dll
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\NUnit.Allure.dll
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\AllureCSharpCommons.dll
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\log4net.dll
+C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\log4net.xml
 C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csprojResolveAssemblyReference.cache

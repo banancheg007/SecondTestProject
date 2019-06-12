@@ -58,6 +58,12 @@
     <Reference Include="Allure.Commons, Version=2.3.64.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Allure.Commons.2.3.64.1\lib\net45\Allure.Commons.dll</HintPath>
     </Reference>
+    <Reference Include="AllureCSharpCommons, Version=0.1.0.29896, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AllureCSharpCommons.0.2.0\lib\net40\AllureCSharpCommons.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MimeTypesMap, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeTypesMap.1.0.3\lib\net45\MimeTypesMap.dll</HintPath>
     </Reference>
