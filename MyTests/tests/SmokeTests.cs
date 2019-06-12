@@ -6,6 +6,7 @@ using MyTests.utils;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,9 @@ namespace MyTests.tests
     [TestFixture]
     [AllureNUnit]
     [AllureDisplayIgnored]
+
+
+
  
     class SmokeTests
     {
@@ -39,6 +43,16 @@ namespace MyTests.tests
         [TearDown]
         public void AfterTest()
         {
+            
+            var status = TestContext.CurrentContext.Result.Outcome.Status;
+
+            if (status == TestStatus.Failed)
+            {
+                Console.WriteLine("УПАЛА КАКА");
+                Driver.MakeScreenShot();
+
+
+            }
             Driver.Destroy();
         }
 

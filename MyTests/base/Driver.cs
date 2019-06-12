@@ -1,8 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.Commons;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.Events;
+using OpenQA.Selenium.Support.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +50,15 @@ namespace FirstTestProject.main
         static void MyElementClickedHandler(object sender, WebElementEventArgs e)
         {
             Console.WriteLine("KURWA");
+        }
+
+        public static void MakeScreenShot()
+        {
+            var screenshot = driver.TakeScreenshot();
+            Random rnd = new Random();
+            var filePath = @"C:\allure-2.7.0\screen" + rnd.Next(1, 99) + ".jpeg";
+            Allure.DefaultLifecycle
+            screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Jpeg);
         }
 
         static public void Destroy()
