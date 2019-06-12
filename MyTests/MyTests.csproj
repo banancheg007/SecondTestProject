@@ -87,7 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="base\BasePage.cs" />
+    <Compile Include="base\Actions.cs" />
     <Compile Include="base\Driver.cs" />
     <Compile Include="base\Program.cs" />
     <Compile Include="pages\LoginPage.cs" />

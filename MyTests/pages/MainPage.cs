@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyTests.pages
 {
-    class MainPage: BasePage
+    class MainPage: Actions
     {
         public By CountryLabel = By.ClassName("geolink__reg");
         public By CountryField = By.Id("city__front-input");

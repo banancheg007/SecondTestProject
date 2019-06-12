@@ -72,12 +72,10 @@ namespace MyTests.tests
         public void LoginTest()
 
         {
-            mainPage.UITest(() =>
-            {
-                mainPage.OpenStartUrl();
+            
+            mainPage.OpenStartUrl();
             loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
             Assert.AreEqual(Constants.AutotestUserLogin, loginPage.GetLoggedUserName());
-            });
         }
 
         [Test]

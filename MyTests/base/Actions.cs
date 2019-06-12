@@ -1,7 +1,6 @@
 ﻿ using FirstTestProject.main;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FirstTestProject.page
 {
-    class BasePage
+    class Actions
     {
          public static IWebDriver driver = Driver.CurrentDriver;
 
@@ -40,27 +39,6 @@ namespace FirstTestProject.page
         {
             WebDriverWait wait = new WebDriverWait(Driver.CurrentDriver, TimeSpan.FromSeconds(20));
             wait.Until(driver => GetWebElement(locator).Enabled == true);
-        }
-
-        public void UITest(Action action)
-        {
-            try
-            {
-                action();
-            }
-            catch (Exception ex)
-            {
-                var screenshot = driver.TakeScreenshot();
-                Random rnd = new Random();
-                var filePath = @"C:\allure-2.7.0\screen"+rnd.Next(1,99)+".jpeg";
-
-                screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Jpeg);
-
-                // This would be a good place to log the exception message and
-                // save together with the screenshot
-
-                throw;
-            }
         }
     }
 

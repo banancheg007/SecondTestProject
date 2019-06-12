@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyTests.pages
 {
-    class LoginPage: BasePage
+    class LoginPage: Actions
     {
         public By LoginField = By.Id("passp-field-login");
         public By PasswordField = By.Id("passp-field-passwd");
