@@ -17,14 +17,8 @@ using System.Threading.Tasks;
 
 namespace MyTests.tests
 {
-    [TestFixture]
-    [AllureNUnit]
-    [AllureDisplayIgnored]
-
-
-
- 
-    class SmokeTests
+    
+    class SmokeTests: BaseTest
     {
 
         
@@ -40,21 +34,7 @@ namespace MyTests.tests
             
         }
 
-        [TearDown]
-        public void AfterTest()
-        {
-            
-            var status = TestContext.CurrentContext.Result.Outcome.Status;
-
-            if (status == TestStatus.Failed)
-            {
-                Console.WriteLine("УПАЛА КАКА");
-                Driver.MakeScreenShot();
-
-
-            }
-            Driver.Destroy();
-        }
+        
 
         [Test]
         public void VerificationOfContentMoreTab()
@@ -87,23 +67,6 @@ namespace MyTests.tests
             loginPage.Logout();
             Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
         }
-
-        /* [Test]
-        public void InvalidPassword()
-
-        {
-            mainPage.OpenStartUrl();
-            loginPage.Login(Constants.AutotestUserLogin, Constants.InvalidAutotestUserPassword);
-            Thread.Sleep(5000);
-            Assert.That(Constants.InvalidPasswordError, Is.EqualTo(loginPage.GetWebElement(loginPage.InvalidPasswordLabel)));
-        }
-
-        [Test]
-        public void NavigationTest()
-
-        {
-            mainPage.OpenStartUrl();
-        }*/
 
     }
 }

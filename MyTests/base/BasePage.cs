@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FirstTestProject.page
 {
-    class Actions
+    class BasePage
     {
          public static IWebDriver driver = Driver.CurrentDriver;
 

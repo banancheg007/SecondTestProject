@@ -50,7 +50,17 @@ namespace FirstTestProject.main
         }
         static void MyElementClickedHandler(object sender, WebElementEventArgs e)
         {
-            Console.WriteLine("KURWA");
+
+            try
+            {
+                Console.WriteLine("Clicked on " + e.Element.Text);
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            
         }
 
         public static void MakeScreenShot()
@@ -64,8 +74,6 @@ namespace FirstTestProject.main
         {
             if (driver != null)
             {
-
-                //Driver.CurrentDriver.Manage().Cookies.DeleteAllCookies();
                 driver.Close();
                 driver.Quit();
                 driver = null;
