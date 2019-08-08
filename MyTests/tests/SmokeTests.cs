@@ -1,8 +1,14 @@
-﻿using FirstTestProject.main;
+﻿using Allure.Commons;
+using FirstTestProject.main;
+using FirstTestProject.page;
 using MyTests.pages;
 using MyTests.utils;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +18,12 @@ using System.Threading.Tasks;
 
 namespace MyTests.tests
 {
-    [TestFixture]
-    class SmokeTests
+    
+    class SmokeTests: BaseTest
     {
+
+        
+
         private MainPage mainPage;
         private LoginPage loginPage;
 
@@ -23,18 +32,16 @@ namespace MyTests.tests
         {
             mainPage = new MainPage();
             loginPage = new LoginPage();
+            
         }
 
-        [OneTimeTearDown]
-        public void Cleanup()
-        {
-            Driver.Destroy();
-        }
+        
 
         [Test]
         public void VerificationOfContentMoreTab()
 
         {
+          
             mainPage.OpenStartUrl();
             mainPage.ChangeCity(Constants.London);
             var contentMoreTabFirstCity = mainPage.GetContentMoreTab();
@@ -46,10 +53,35 @@ namespace MyTests.tests
         public void LoginTest()
 
         {
+            
             mainPage.OpenStartUrl();
             loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
             Assert.AreEqual(Constants.AutotestUserLogin, loginPage.GetLoggedUserName());
         }
+
+        [Test]
+        public void LogoutTest()
+
+        {
+            mainPage.OpenStartUrl();
+            loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
+            loginPage.Logout();
+            Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
+        }
+
+        [Test]
+        public void TestWithActions()
+
+        {
+            mainPage.OpenStartUrl();
+            //loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
+            //loginPage.Logout();
+            //Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
+            mainPage.ClickOnElementWithActionsClass(mainPage.MoreTab);
+            mainPage.ScrollToElementWithActionsClass(mainPage.TvProgramLabel);
+            mainPage.Input(mainPage.SearchField);
+        }
+
 
     }
 }
