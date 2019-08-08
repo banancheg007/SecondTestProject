@@ -8,6 +8,7 @@ using NUnit.Allure.Core;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,6 +68,19 @@ namespace MyTests.tests
             loginPage.Logout();
             Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
         }
+
+        [Test]
+        public void TestWithActions()
+
+        {
+            mainPage.OpenStartUrl();
+            //loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
+            //loginPage.Logout();
+            //Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
+            mainPage.ClickOnMoreTabWithActionsClass();
+            Thread.Sleep(6000);
+        }
+
 
     }
 }

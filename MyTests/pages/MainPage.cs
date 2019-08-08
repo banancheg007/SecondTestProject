@@ -1,6 +1,8 @@
-﻿using FirstTestProject.page;
+﻿using FirstTestProject.main;
+using FirstTestProject.page;
 using MyTests.utils;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,7 @@ namespace MyTests.pages
         public By CountryLabel = By.ClassName("geolink__reg");
         public By CountryField = By.Id("city__front-input");
         public By MoreTabItems = By.ClassName("home-tabs__more-item");
-        public By MoreTab = By.XPath("//div[@class='home-arrow__tabs']//descendant::a[9]");
+        public By MoreTab = By.XPath("//a[text()='ещё']");
         public By NavigationTabItems = By.XPath("//descendant::div[@class='home-tabs stream-control dropdown2 dropdown2_switcher_elem i-bem home-tabs_js_inited']");
 
         public void OpenStartUrl()
@@ -36,6 +38,7 @@ namespace MyTests.pages
 
         public IList<string> GetContentMoreTab()
         {
+            //Thread.Sleep(10000);
             WaitForDisplayed(MoreTab);
             GetWebElement(MoreTab).Click();
             var contentMoreTab =  GetWebElements(MoreTabItems);
@@ -48,5 +51,17 @@ namespace MyTests.pages
             }
             return contentMoreTabStrings;
         }
+
+
+
+         public void ClickOnMoreTabWithActionsClass()
+        {
+            
+            WaitForDisplayed(MoreTab);
+            Actions actions = new Actions(Driver.CurrentDriver);
+            actions.Click(GetWebElement(MoreTab)).Build().Perform();
+        }
+
+
     }
 }

@@ -36,9 +36,11 @@ namespace FirstTestProject.main
                         Kind = ProxyKind.Manual,
                         IsAutoDetect = false,
 
-                        SslProxy = "91.208.39.70:8080"
+                        SslProxy = "144.217.6.109:8080"
                     };
-                    options.Proxy = proxy;
+                //options.AddArgument("headless");
+                //options.AddArguments("disable-infobars");
+                options.Proxy = proxy;
                     options.AddArgument("ignore-certificate-errors");
                     driver = new ChromeDriver(options);
                 }
