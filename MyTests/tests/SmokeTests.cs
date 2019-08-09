@@ -35,8 +35,8 @@ namespace MyTests.tests
             
         }
 
-        
 
+        [Ignore("Неактуально")]
         [Test]
         public void VerificationOfContentMoreTab()
 
@@ -49,6 +49,7 @@ namespace MyTests.tests
             Assert.AreEqual(contentMoreTabFirstCity, mainPage.GetContentMoreTab());
         }
 
+        [Ignore("Неактуально")]
         [Test]
         public void LoginTest()
 
@@ -59,6 +60,7 @@ namespace MyTests.tests
             Assert.AreEqual(Constants.AutotestUserLogin, loginPage.GetLoggedUserName());
         }
 
+        [Ignore("Неактуально")]
         [Test]
         public void LogoutTest()
 
