@@ -74,13 +74,20 @@ namespace MyTests.tests
 
         {
             mainPage.OpenStartUrl();
-            //loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
-            //loginPage.Logout();
-            //Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
-            mainPage.ClickOnMoreTabWithActionsClass();
-            Thread.Sleep(6000);
+            mainPage.ClickOnElementWithActionsClass(mainPage.MoreTab);
+            mainPage.ScrollToElementWithActionsClass(mainPage.TvProgramLabel);
+            mainPage.Input(mainPage.SearchField);
         }
 
+        [Test]
+        public void TestWithJsExecutor()
+
+        {
+            mainPage.OpenStartUrl();
+            mainPage.ClickOnElementWithJsExecutor(mainPage.MoreTab);
+            mainPage.InputJsExecutor(mainPage.SearchField);
+            mainPage.ScrollToElementWithJsExecutor(mainPage.VisitedLabel);
+        }
 
     }
 }
