@@ -40,6 +40,9 @@ namespace FirstTestProject.main
                     };
                 //options.AddArgument("headless");
                 //options.AddArguments("disable-infobars");
+                options.AddUserProfilePreference("download.prompt_for_download", false);
+                options.AddUserProfilePreference("download.directory_upgrade", true);
+                options.AddUserProfilePreference("download.default_directory", @"C:\TestDownLoad");
                 options.Proxy = proxy;
                     options.AddArgument("ignore-certificate-errors");
                     driver = new ChromeDriver(options);

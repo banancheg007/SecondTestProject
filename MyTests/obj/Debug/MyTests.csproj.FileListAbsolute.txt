@@ -41,4 +41,6 @@ C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\WebDriver.xml
 C:\Users\Andersen\source\repos\MyTests\MyTests\bin\Debug\WebDriver.Support.xml
 C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.exe
 C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.pdb
-C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csprojResolveAssemblyReference.cache
+C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csprojAssemblyReference.cache
+C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csproj.CoreCompileInputs.cache
+C:\Users\Andersen\source\repos\MyTests\MyTests\obj\Debug\MyTests.csproj.CopyComplete
