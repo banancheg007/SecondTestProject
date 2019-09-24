@@ -51,7 +51,7 @@ namespace FirstTestProject.main
             EventFiringWebDriver eventsDriver = new EventFiringWebDriver(driver);
             eventsDriver.ElementClicked += new EventHandler<WebElementEventArgs>(MyElementClickedHandler);
             return eventsDriver;
-            
+           
         }
         static void MyElementClickedHandler(object sender, WebElementEventArgs e)
         {
