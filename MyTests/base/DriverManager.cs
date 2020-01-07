@@ -36,10 +36,13 @@ namespace FirstTestProject.main
                         Kind = ProxyKind.Manual,
                         IsAutoDetect = false,
 
-                        SslProxy = "144.217.6.109:8080"
+                        SslProxy = "5.1.53.46:8080"
                     };
                 //options.AddArgument("headless");
                 //options.AddArguments("disable-infobars");
+                options.AddUserProfilePreference("download.prompt_for_download", false);
+                options.AddUserProfilePreference("download.directory_upgrade", true);
+                options.AddUserProfilePreference("download.default_directory", @"C:\TestDownLoad");
                 options.Proxy = proxy;
                     options.AddArgument("ignore-certificate-errors");
                     driver = new ChromeDriver(options);
@@ -48,7 +51,7 @@ namespace FirstTestProject.main
             EventFiringWebDriver eventsDriver = new EventFiringWebDriver(driver);
             eventsDriver.ElementClicked += new EventHandler<WebElementEventArgs>(MyElementClickedHandler);
             return eventsDriver;
-            
+           
         }
         static void MyElementClickedHandler(object sender, WebElementEventArgs e)
         {

@@ -35,8 +35,8 @@ namespace MyTests.tests
             
         }
 
-        
 
+        [Ignore("Неактуально")]
         [Test]
         public void VerificationOfContentMoreTab()
 
@@ -49,6 +49,7 @@ namespace MyTests.tests
             Assert.AreEqual(contentMoreTabFirstCity, mainPage.GetContentMoreTab());
         }
 
+        [Ignore("Неактуально")]
         [Test]
         public void LoginTest()
 
@@ -59,6 +60,7 @@ namespace MyTests.tests
             Assert.AreEqual(Constants.AutotestUserLogin, loginPage.GetLoggedUserName());
         }
 
+        [Ignore("Неактуально")]
         [Test]
         public void LogoutTest()
 
@@ -74,14 +76,21 @@ namespace MyTests.tests
 
         {
             mainPage.OpenStartUrl();
-            //loginPage.Login(Constants.AutotestUserLogin, Constants.AutotestUserPassword);
-            //loginPage.Logout();
-            //Assert.That(loginPage.GetWebElement((loginPage.EnterMailButton)).Displayed, Is.True);
             mainPage.ClickOnElementWithActionsClass(mainPage.MoreTab);
             mainPage.ScrollToElementWithActionsClass(mainPage.TvProgramLabel);
             mainPage.Input(mainPage.SearchField);
         }
 
+        [Test]
+        public void TestWithJsExecutor()
+
+        {
+            mainPage.OpenStartUrl();
+            //mainPage.ScrollVerticalJsExec();
+            mainPage.ClickOnElementWithJsExecutor(mainPage.MoreTab);
+            mainPage.InputJsExecutor(mainPage.SearchField);
+            mainPage.ScrollToElementWithJsExecutor(mainPage.VisitedLabel);
+        }
 
     }
 }
